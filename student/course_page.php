@@ -55,15 +55,45 @@ session_start();
 
     </div>
 </nav>
+<div class="container-fluid">
+  <div class="row">
+	<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item" >
+            <a class="nav-link active" aria-current="page" href="#">
+               Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              Course Contenet
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="discussion.php">
+              Discussions
+            </a>
+          </li>
+		  <li class="nav-item">
+            <a class="nav-link" href="#">
+             Assignemnts
+            </a>
+          </li>
+          
+        </ul>
 
-<div class="jumbotron" style='margin: 30px'>
-    <h1 class="display-4">Welcome</h1>
-    <p class="lead">Home page.</p>
-    <hr class="my-4">
-    <p></p>
-    <!--a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a-->
+       
+      </div>
+    </nav>
+
+	<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style='padding-top:50px'>
+		
+		<h2>Design Internet Systems</h2>
+	  
+	</main>
+  </div>
 </div>
-
 
 </body>
 

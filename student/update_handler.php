@@ -3,14 +3,14 @@
 <?php
 	include('../db_conn.php');
 	include('profile.php');
-	session_start();
+	
 
 	$id = $_SESSION['id'];
-	$fname = $_SESSION['fname'];
-	$lname = $_SESSION['lname'];
-	$mail = $_SESSION['mail'];
+	$fname = $_SESSION['first_name'];
+	$lname = $_SESSION['last_name'];
+	$mail = $_SESSION['email'];
 	
-	$sql = "UPDATE student SET last_name='$lname', firstname='$fname' email ='$mail' WHERE id='$id' ";
+	$sql = "UPDATE student SET last_name='$lname', first_name='$fname' email ='$mail' WHERE id='$id' ";
 	if ($conn->query($sql) === TRUE) {
 		echo "Record updated successfully";
 	} 
