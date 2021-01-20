@@ -167,7 +167,8 @@ session_start();
                                 </div>
                             </div>
                             <div class='row'>
-                                <a class='btn btn-info' href='update_profile.php?id={$row["id"]}'>Edit details</a>
+
+                                <button style ='margin: 10px;' type='button' class='btn btn-success card-link' data-toggle='modal' data-target='#myModalchange'>Edit details</button>
                             </div>
 
                         </div>
@@ -186,6 +187,69 @@ session_start();
         </div>
 </div>
 </form>
+</div>
+
+<div class="modal" id="myModalchange">
+  <div class="modal-dialog">
+    <div class="modal-content">
+	<form action="update_handler.php" method=POST>
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Change info</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+	   <div class="form-group">
+			<label for="exampleFormControlSelect1">id</label>
+			<select class="form-control" name="id" id="exampleFormControlSelect1">
+				<?php
+
+				$result = $conn->query($sql);
+
+				if($result->num_rows >0) {
+					while($row = $result->fetch_assoc()) {
+						echo "<option>". $row["id"]. "</option>";
+						}
+				}else{
+					echo "0 result";
+				}
+
+				$conn->close();
+
+
+				?>
+			</select>
+		</div>
+		<label for="firstname">Firstname:</label>
+         <input name="firstname" class="form-control" type="text">
+		<label for="lastname">Lastname:</label>
+		 <input name="lastname" class="form-control" type="text">
+		<label for="email ">Email:</label>
+		 <input name="email"  class="form-control" type="email">
+		 <label for="gender">Gender:</label>
+         <input name="gender" class="form-control" type="text">
+		<label for="age">Age:</label>
+		 <input name="age" class="form-control" type="number">
+		<label for="dateofbirth">Date of birth:</label>
+		 <input name="dateofbirth" class="form-control" type="date">
+		 <label for="nationality">Nationality:</label>
+         <input name="nationality" class="form-control" type="text">
+		<label for="postalAddress">Postal code:</label>
+		 <input name="postalAddress" class="form-control" type="number">
+
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+		<button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+	</form>
+    </div>
+  </div>
 </div>
 </body>
 
